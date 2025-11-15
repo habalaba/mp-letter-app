@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Write to Your MP / MPP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Write to Your MP / MPP</h1>
+
+      <section class="card">
+        <h2>1. Find your representative</h2>
+        <div class="field-row">
+          <label for="postal">Postal code</label>
+          <input
+            id="postal"
+            type="text"
+            placeholder="e.g. M5V 2T6"
+            autocomplete="postal-code"
+          />
+        </div>
+        <div class="field-row">
+          <span>Level</span>
+          <label>
+            <input type="radio" name="level" value="federal" checked />
+            MP (federal)
+          </label>
+          <label>
+            <input type="radio" name="level" value="provincial" />
+            MPP (Ontario)
+          </label>
+        </div>
+        <button id="lookupBtn">Find my representative</button>
+        <div id="repResult" class="result"></div>
+      </section>
+
+      <section class="card">
+        <h2>2. Your details</h2>
+        <div class="field-row">
+          <label for="name">Full name</label>
+          <input id="name" type="text" placeholder="Your full name" />
+        </div>
+        <div class="field-row">
+          <label for="addr1">Address line 1</label>
+          <input id="addr1" type="text" placeholder="Street address" />
+        </div>
+        <div class="field-row">
+          <label for="addr2">Address line 2</label>
+          <input
+            id="addr2"
+            type="text"
+            placeholder="Apt / Suite (optional)"
+          />
+        </div>
+        <div class="field-row">
+          <label for="city">City</label>
+          <input id="city" type="text" />
+        </div>
+        <div class="field-row">
+          <label for="province">Province</label>
+          <input id="province" type="text" placeholder="ON" />
+        </div>
+        <div class="field-row">
+          <label for="senderPostal">Postal code</label>
+          <input id="senderPostal" type="text" autocomplete="postal-code" />
+        </div>
+        <div class="field-row">
+          <label for="email">Email (optional)</label>
+          <input id="email" type="email" />
+        </div>
+        <div class="field-row">
+          <label for="phone">Phone (optional)</label>
+          <input id="phone" type="tel" />
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>3. Your message</h2>
+        <div class="field-row">
+          <label for="topic">Subject</label>
+          <input
+            id="topic"
+            type="text"
+            placeholder="Short description of your concern"
+          />
+        </div>
+        <div class="field-row">
+          <label for="rawMessage">Message (in your own words)</label>
+          <textarea
+            id="rawMessage"
+            rows="6"
+            placeholder="Explain what you care about and what you want your representative to do."
+          ></textarea>
+        </div>
+        <button id="enhanceBtn">Enhance with AI</button>
+        <div id="enhancedWrapper" class="hidden">
+          <h3>Enhanced letter body</h3>
+          <textarea id="enhancedBody" rows="10"></textarea>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>4. Build letter</h2>
+        <button id="buildBtn">Generate letter</button>
+        <div id="letterWrapper" class="hidden">
+          <h3>Letter preview</h3>
+          <pre id="letterPreview"></pre>
+          <button id="printBtn">Print / Save as PDF</button>
+        </div>
+      </section>
+
+      <section class="card note">
+        <p>
+          Tip: After generating your letter, use your browser's
+          <strong>Print</strong> function and select <strong>Save as PDF</strong>
+          to download a copy you can email or print and mail.
+        </p>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
